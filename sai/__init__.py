@@ -1,7 +1,6 @@
 import os
 import logging
 
-from happymongo import HapPyMongo
 from flask import Flask, abort, g
 
 from config import config
@@ -10,8 +9,6 @@ from ui import bp as ui_bp
 
 app = Flask(__name__)
 app.config.from_object(config)
-
-mongo, db = HapPyMongo(app)
 
 app.register_blueprint(api_v1_bp, url_prefix='/api/v1')
 app.register_blueprint(ui_bp, url_path='/')
