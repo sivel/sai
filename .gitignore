@@ -36,5 +36,5 @@ nosetests.xml
 .pydevproject
 
 # Project specific stuff
-playbooks
+playbooks/*
 config.py

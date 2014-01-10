@@ -1,0 +1,3 @@
+Place your ansible playbooks here, with your inventory files inside of the
+inventory directory. Playbooks may not be nested, they must exist in the root
+of this directory.
