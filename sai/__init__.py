@@ -14,11 +14,6 @@ app.register_blueprint(api_v1_bp, url_prefix='/api/v1')
 app.register_blueprint(ui_bp, url_path='/')
 
 
-@app.before_request
-def globalize():
-    g.mongo, g.db = mongo, db
-
-
 @app.before_first_request
 def set_root_path():
     root_path = app.config.get('root_path')
