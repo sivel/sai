@@ -82,7 +82,11 @@ def playbook_run(playbook):
     os.environ.update({
         'SAI_REMOTE_ADDR': request.remote_addr,
         'SAI_HTTP_HOST': request.host,
-        'SAI_QUERY_STRING': request.query_string
+        'SAI_QUERY_STRING': request.query_string,
+        'SAI_REQUEST_URI': request.path,
+        'SAI_PATH_INFO': request.path,
+        'SAI_REMOTE_USER': request.remote_user if request.remote_user else '',
+        'SAI_PLAYBOOK': playbook,
     })
 
     try:
