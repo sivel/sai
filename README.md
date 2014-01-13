@@ -52,4 +52,4 @@ This application provides no built in logging of actions.  It is recommended tha
 
 To utilize a callback plugin, create a directory at `~/sai/sai/playbooks/callback_plugins` and place your callback plugins inside of that directory.
 
-Sai will call all of the same callbacks that the `ansible-playbook` command utilizes.
+Sai will make all of the same callbacks that the `ansible-playbook` command utilizes.
