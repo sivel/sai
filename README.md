@@ -42,9 +42,9 @@ SAI_PLAYBOOK
 
 ## Security
 
-This application offers no itself.  Use a web or proxy server in front for username/password protection.
+This application offers no security itself.  Use a web or proxy server in front for username/password protection.
 
-Your playbooks and inventory scripts can also take advantage of the above environment variables to implement security.
+Your playbooks and inventory scripts can also take advantage of the above environment variables to implement security and customization.
 
 ## Logging
 
