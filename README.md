@@ -26,7 +26,25 @@ The only API endpoint currently is to run a playbook, such as:
 
 In the above example, `example-playbook` is the name of the playbook to run, which will be looked for in the `playbooks` directory with either no extension, `.yml` or `.yaml`
 
-## Environment variables
+### Sample Response
+
+```json
+{
+    "hosts": [
+        "localhost"
+    ],
+    "msg": "accepted",
+    "playbook": "example-playbook",
+    "skip_tags": null,
+    "state": "accepted",
+    "subset": [],
+    "tags": [
+        "all"
+    ]
+}
+```
+
+## Environment Variables
 
 Several environment variables are exposed by sai to ansible, and by association, the ansible playbooks and inventory scripts.
 
