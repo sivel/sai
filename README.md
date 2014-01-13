@@ -45,3 +45,11 @@ SAI_PLAYBOOK
 This application offers no itself.  Use a web or proxy server in front for username/password protection.
 
 Your playbooks and inventory scripts can also take advantage of the above environment variables to implement security.
+
+## Logging
+
+This application provides no built in logging of actions.  It is recommended that you utilize a callback plugin within ansible for this purpose.
+
+To utilize a callback plugin, create a directory at `~/sai/sai/playbooks/callback_plugins` and place your callback plugins inside of that directory.
+
+Sai will call all of the same callbacks that the `ansible-playbook` command utilizes.
