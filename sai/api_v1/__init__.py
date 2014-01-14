@@ -73,7 +73,7 @@ class PlaybookRun(Thread):
             self.playbook_cb.on_stats(self.pb.stats)
 
 
-@bp.route('/playbook/<playbook>/run')
+@bp.route('/playbook/<playbook>/run', methods=['GET', 'POST'])
 def playbook_run(playbook):
     playbooks_path = current_app.config.get('playbooks_path')
     inventory_path = os.path.join(playbooks_path, 'inventory')
@@ -88,6 +88,13 @@ def playbook_run(playbook):
         'SAI_REMOTE_USER': request.remote_user if request.remote_user else '',
         'SAI_PLAYBOOK': playbook,
     })
+
+    if request.method.upper() == 'POST':
+        keys = []
+        for key, value in request.form.iteritems():
+            keys.append(key.upper())
+            os.environ['SAI_POST_%s' % key.upper()] = value
+        os.environ['SAI_POST_KEYS'] = ','.join(keys)
 
     try:
         subset = (request.args.get('subset').replace(',',':')
