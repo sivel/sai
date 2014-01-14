@@ -58,9 +58,9 @@ class PlaybookCallbacks(object):
 
 
 class PlaybookRun(Thread):
-    def __init__(self, current_app, playbook_cb, pb):
+    def __init__(self, app, playbook_cb, pb):
         self.pb = pb
-        self.current_app = current_app
+        self.app = app
         self.playbook_cb = playbook_cb
         Thread.__init__(self)
 
@@ -68,7 +68,7 @@ class PlaybookRun(Thread):
         try:
             self.pb.run()
         except errors.AnsibleError as e:
-            self.current_app.logger.debug('%s' % e)
+            self.app.logger.error('%s' % e)
         else:
             self.playbook_cb.on_stats(self.pb.stats)
 
