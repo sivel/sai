@@ -60,6 +60,19 @@ SAI_REMOTE_USER
 SAI_PLAYBOOK
 ```
 
+In the case of a POST request to the API, you will additionally have a `SAI_POST_KEYS` environment variable, that is a comma separated list of uppercased POST keys.  There will also be environment variables for each key=value of the POST, in the format of `SAI_POST_<KEY>` where `<KEY>` is a value from `SAI_POST_KEYS`.
+
+An example of POST data environment variables may look like:
+
+```
+SAI_POST_KEYS="PUB_KEY_DSA,PUB_KEY_RSA,PUB_KEY_ECDSA,INSTANCE_ID,HOSTNAME"
+SAI_POST_PUB_KEY_DSA="pubkeydsawouldbehere"
+SAI_POST_PUB_KEY_RSA="pubkeyrsawouldbehere"
+SAI_POST_PUB_KEY_ECDSA="pubkeyecdsawouldbehere"
+SAI_POST_INSTANCE_ID="iid-datasource-none"
+SAI_POST_HOSTNAME="serer.example.org"
+```
+
 ## Security
 
 This application offers no security itself.  Use a web or proxy server in front for username/password protection.
