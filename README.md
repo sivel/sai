@@ -2,7 +2,7 @@
 
 A simple API utility for invoking Ansible playbooks
 
-This is not meant to be a replacement for AnsibleWorks [AWX](http://www.ansibleworks.com/ansibleworks-awx/). If you are looking for more advanced and robust functionality, you should look at AWX instead. In fact, you should probably look at AWX regardless of the complexity of your need or requirement for more advanced functionality.
+This is not meant to be a replacement for Ansible [Tower](http://www.ansible.com/ansible-tower). If you are looking for more advanced and robust functionality, you should look at Tower instead. In fact, you should probably look at Tower regardless of the complexity of your need or requirement for more advanced functionality.
 
 ## Installation
 
